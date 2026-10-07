@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garage Sales | Arts Sales And Services</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Outfit & Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            coral: '#FF6B6B',
+                            teal: '#4ECDC4',
+                            yellow: '#FFE66D',
+                            purple: '#8A4FFF',
+                            blue: '#3B82F6',
+                            dark: '#0F172A',
+                            lightBg: '#F8FAFC'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Outfit', 'Poppins', sans-serif;
+            background-color: #F8FAFC;
+            color: #0F172A;
+            overflow-x: hidden;
+        }
+
+        .gradient-border {
+            background: linear-gradient(135deg, #FF6B6B, #8A4FFF, #4ECDC4);
+            padding: 3px;
+            border-radius: 1.5rem;
+        }
+
+        .badge-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .5; }
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F1F1F1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4ECDC4;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #FF6B6B;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-coral selection:text-white">
+
+    <header class="sticky top-0 z-40 w-full bg-white/90 backdrop-blur-md shadow-xs border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-brand-coral via-brand-purple to-brand-teal flex items-center justify-center text-white text-2xl font-black shadow-md group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-gift"></i>
+                    </div>
+                    <div>
+                        <span class="text-2xl font-black tracking-tight text-brand-dark block leading-none">GARAGE<span class="text-brand-coral">SALES</span></span>
+                        <span class="text-xs text-brand-purple font-semibold tracking-wide">Arts Sales & Services</span>
+                    </div>
+                </a>
+
+                <!-- Header Action Buttons -->
+                <div class="flex items-center gap-3">
+                    <button id="inquiryBtn" onclick="toggleInquiryDrawer()" class="relative px-4 py-2.5 bg-brand-lightBg hover:bg-gray-200 text-brand-dark rounded-xl transition-all flex items-center gap-2 font-bold text-sm border border-gray-200 cursor-pointer">
+                        <i class="fa-solid fa-clipboard-list text-brand-coral text-lg"></i>
+                        <span class="hidden sm:inline">Inquiry List</span>
+                        <span id="inquiryBadge" class="bg-brand-coral text-white text-xs font-bold px-2 py-0.5 rounded-full hidden">0</span>
+                    </button>
+                    
+                    <a href="mailto:anirudhvegas2013@gmail.com" class="px-4 py-2.5 bg-brand-dark hover:bg-slate-800 text-white rounded-xl transition-all flex items-center gap-2 font-bold text-sm shadow-xs">
+                        <i class="fa-solid fa-envelope text-brand-teal"></i>
+                        <span class="hidden sm:inline">Email Us</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="relative overflow-hidden pt-8 pb-16 md:pt-12 md:pb-20 bg-gradient-to-b from-slate-50 via-purple-50/20 to-brand-lightBg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-8">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-100 text-brand-purple text-xs sm:text-sm font-bold shadow-xs border border-purple-200">
+                    <span class="w-2.5 h-2.5 rounded-full bg-brand-coral badge-pulse"></span>
+                    13-Year-Old Founders • Anirudh Harish & Dhriti Shriram
+                </div>
+                <h1 class="text-3xl sm:text-5xl font-black text-brand-dark tracking-tight">
+                    Custom Artwork, Sales of Goodies & Repair Services
+                </h1>
+                <p class="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto">
+                    Sales of cool goodies, fine stationery pens, item repairs, and tech support — delivered directly to your door!
+                </p>
+            </div>
+
+            <!-- PROMINENT FEATURE BOX: ARTS SALES AND SERVICES -->
+            <div class="gradient-border shadow-2xl max-w-5xl mx-auto my-6">
+                <div class="bg-slate-900 rounded-[1.3rem] p-8 sm:p-12 text-white relative overflow-hidden">
+                    <div class="absolute -top-10 -right-10 w-72 h-72 bg-brand-purple/30 rounded-full blur-3xl pointer-events-none"></div>
+                    <div class="absolute -bottom-10 -left-10 w-72 h-72 bg-brand-teal/30 rounded-full blur-3xl pointer-events-none"></div>
+
+                    <div class="relative z-10 text-center space-y-6">
+                        <div class="inline-block px-4 py-1.5 bg-brand-coral text-white text-xs font-black uppercase tracking-widest rounded-full shadow-sm">
+                            ★ Featured Offerings
+                        </div>
+                        
+                        <h2 class="text-4xl sm:text-6xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-brand-yellow via-white to-brand-teal">
+                            ARTS SALES AND SERVICES
+                        </h2>
+
+                        <p class="text-gray-300 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
+                            Combining <strong class="text-brand-teal">Dhriti’s creative handicraft & artistic goodies</strong> with <strong class="text-brand-yellow">Anirudh’s sales expertise, tech assistance, and repair services</strong>. All orders and service requests are strictly handled via <strong class="text-brand-coral">DELIVERY</strong>!
+                        </p>
+
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-3xl mx-auto pt-4 text-xs font-bold">
+                            <div class="bg-white/10 backdrop-blur-md p-3.5 rounded-2xl border border-white/10 text-brand-yellow flex flex-col items-center gap-1.5">
+                                <i class="fa-solid fa-gift text-xl"></i>
+                                <span>Sales of Goodies</span>
+                            </div>
+                            <div class="bg-white/10 backdrop-blur-md p-3.5 rounded-2xl border border-white/10 text-brand-teal flex flex-col items-center gap-1.5">
+                                <i class="fa-solid fa-screwdriver-wrench text-xl"></i>
+                                <span>Item Repairs</span>
+                            </div>
+                            <div class="bg-white/10 backdrop-blur-md p-3.5 rounded-2xl border border-white/10 text-brand-coral flex flex-col items-center gap-1.5">
+                                <i class="fa-solid fa-pen-nib text-xl"></i>
+                                <span>Pens & Stationery</span>
+                            </div>
+                            <div class="bg-white/10 backdrop-blur-md p-3.5 rounded-2xl border border-white/10 text-blue-300 flex flex-col items-center gap-1.5">
+                                <i class="fa-solid fa-truck-shield text-xl"></i>
+                                <span>Direct Delivery</span>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 flex flex-col sm:flex-row justify-center gap-4">
+                            <a href="#request-section" class="px-8 py-4 bg-brand-coral hover:bg-rose-600 text-white font-black text-sm rounded-2xl transition-all shadow-lg hover:shadow-xl">
+                                Request Goodies / Service
+                            </a>
+                            <a href="mailto:anirudhvegas2013@gmail.com" class="px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-extrabold text-sm rounded-2xl transition-all border border-white/20">
+                                Send Direct Email
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="py-16 bg-white border-y border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-brand-purple font-extrabold uppercase text-xs tracking-widest">Our Founders</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-dark mt-2">Meet Anirudh & Dhriti</h2>
+                <p class="text-gray-600 mt-2 text-sm sm:text-base">Two 13-year-olds bringing arts, creative goodies sales, pens, item repairs, and tech support directly to you via delivery!</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                
+                <!-- Dhriti Shriram Card -->
+                <div class="bg-gradient-to-br from-pink-50/50 to-purple-50/50 p-8 rounded-3xl border border-purple-100 shadow-sm relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-brand-purple text-white font-bold text-xs px-4 py-1.5 rounded-bl-2xl">
+                        Handicrafts & Goodies Lead
+                    </div>
+                    <div class="flex items-center gap-5 mb-6">
+                        <div class="w-20 h-20 rounded-2xl bg-gradient-to-tr from-pink-400 to-brand-purple flex items-center justify-center text-3xl text-white font-black shadow-md">
+                            DS
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-brand-dark">Dhriti Shriram</h3>
+                            <p class="text-brand-purple font-semibold text-sm">Age 13 • Creative Crafts & Goodies Specialist</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                        Dhriti is a super talented handicraft maker and artist. She crafts unique papercraft goodies, custom artwork, decorative bookmarks, and fun handmade creations.
+                    </p>
+                    <div class="space-y-2 text-xs font-semibold text-gray-700">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-brand-purple"></i>
+                            <span>Handmade Goodies & Custom Crafts</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-brand-purple"></i>
+                            <span>Custom Sketches, Drawings & Paintings</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-brand-purple"></i>
+                            <span>Decorative Bookmarks & Personal Keepsakes</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Anirudh Harish Card -->
+                <div class="bg-gradient-to-br from-blue-50/50 to-teal-50/50 p-8 rounded-3xl border border-teal-100 shadow-sm relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-brand-teal text-white font-bold text-xs px-4 py-1.5 rounded-bl-2xl">
+                        Founder & Tech/Sales Lead
+                    </div>
+                    <div class="flex items-center gap-5 mb-6">
+                        <div class="w-20 h-20 rounded-2xl bg-gradient-to-tr from-teal-400 to-blue-600 flex items-center justify-center text-3xl text-white font-black shadow-md">
+                            AH
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-brand-dark">Anirudh Harish</h3>
+                            <p class="text-brand-teal font-semibold text-sm">Age 13 • Sales, Item Repairs & Technical Support</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                        Anirudh manages sales of fine stationery and goodies, provides item repair services, and offers hands-on technical support for devices and software.
+                    </p>
+                    <div class="space-y-2 text-xs font-semibold text-gray-700">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-brand-teal"></i>
+                            <span>Fixing & Repairing Old / Broken Items</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-brand-teal"></i>
+                            <span>Technical Assistance & Device Setup</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-brand-teal"></i>
+                            <span>Sales Management (Pens, Goodies & Supplies)</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-brand-lightBg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
+                <div>
+                    <span class="text-brand-coral font-extrabold uppercase text-xs tracking-wider">Catalog</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-dark mt-1">Arts, Goodies & Repair Services</h2>
+                </div>
+                <p class="text-gray-500 text-sm mt-2 md:mt-0 max-w-md">Browse our offerings and add items or services to your Inquiry List to request delivery details via email!</p>
+            </div>
+
+            <!-- Category Filters -->
+            <div class="flex flex-wrap gap-2 sm:gap-3 mb-10 overflow-x-auto pb-2">
+                <button onclick="filterOfferings('all')" class="offer-filter active px-5 py-2.5 rounded-2xl text-xs sm:text-sm font-bold transition-all bg-brand-dark text-white shadow-xs cursor-pointer" data-cat="all">
+                    🌟 All Offerings
+                </button>
+                <button onclick="filterOfferings('goodies')" class="offer-filter px-5 py-2.5 rounded-2xl text-xs sm:text-sm font-semibold transition-all bg-white text-gray-600 hover:bg-gray-100 shadow-xs cursor-pointer" data-cat="goodies">
+                    🎁 Sales of Goodies & Crafts (Dhriti)
+                </button>
+                <button onclick="filterOfferings('sales')" class="offer-filter px-5 py-2.5 rounded-2xl text-xs sm:text-sm font-semibold transition-all bg-white text-gray-600 hover:bg-gray-100 shadow-xs cursor-pointer" data-cat="sales">
+                    ✏️ Pens & Stationery Goodies (Anirudh)
+                </button>
+                <button onclick="filterOfferings('repairs')" class="offer-filter px-5 py-2.5 rounded-2xl text-xs sm:text-sm font-semibold transition-all bg-white text-gray-600 hover:bg-gray-100 shadow-xs cursor-pointer" data-cat="repairs">
+                    🛠 Item Repairing (Anirudh)
+                </button>
+                <button onclick="filterOfferings('tech')" class="offer-filter px-5 py-2.5 rounded-2xl text-xs sm:text-sm font-semibold transition-all bg-white text-gray-600 hover:bg-gray-100 shadow-xs cursor-pointer" data-cat="tech">
+                    💻 Technical Services
+                </button>
+            </div>
+
+            <!-- Offerings Grid -->
+            <div id="offeringsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Injected dynamically via JS -->
+            </div>
+        </div>
+    </section>
+
+    <section id="request-section" class="py-20 bg-white border-t border-gray-100">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-b from-brand-lightBg to-white p-8 sm:p-12 rounded-3xl shadow-sm border border-gray-200">
+                <div class="text-center max-w-xl mx-auto mb-10">
+                    <span class="text-brand-purple font-extrabold uppercase text-xs tracking-wider">Custom Request & Orders</span>
+                    <h2 class="text-3xl font-extrabold text-brand-dark mt-1">Send Us a Request</h2>
+                    <p class="text-gray-500 text-sm mt-2">Have a broken item needing repair, technical issue, or want a custom goodie/drawing from Dhriti? Submit below to email <strong>anirudhvegas2013@gmail.com</strong>!</p>
+                </div>
+
+                <!-- Contact & Delivery Info Banner -->
+                <div class="bg-blue-50 border border-blue-100 rounded-2xl p-4 mb-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-medium text-blue-900">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-truck text-brand-coral text-xl"></i>
+                        <span><strong>Handover Method:</strong> Strictly Delivery for all items, repairs, and goodies.</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-gray-600 bg-white px-3 py-1.5 rounded-xl border border-blue-100">
+                        <i class="fa-solid fa-phone-slash text-gray-400"></i>
+                        <span>No phone number available yet</span>
+                    </div>
+                </div>
+
+                <form id="requestForm" onsubmit="handleRequestSubmit(event)" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Your Name</label>
+                            <input type="text" id="senderName" required placeholder="e.g. Alex Johnson" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-brand-purple/50 text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Your Email</label>
+                            <input type="email" id="senderEmail" required placeholder="e.g. alex@example.com" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-brand-purple/50 text-sm">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Service / Request Type</label>
+                            <select id="requestType" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-brand-purple/50 bg-white text-sm">
+                                <option>🎁 Order Special Goodies & Gift Packs (Dhriti)</option>
+                                <option>🛠️ Fixing / Repairing Old or Broken Items (Anirudh)</option>
+                                <option>🎨 Custom Drawing or Artwork (Dhriti)</option>
+                                <option>💻 Technical Assistance or Device Setup (Anirudh)</option>
+                                <option>✏️ Fine Pens & Stationery Goodies Order (Anirudh)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Handover Method</label>
+                            <input type="text" value="📦 Standard Delivery" readonly class="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-100 text-gray-600 text-sm cursor-not-allowed font-semibold">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Delivery Address & Request Details</label>
+                        <textarea id="requestDetails" rows="4" required placeholder="Include your delivery address and describe the goodies you want, custom artwork details, or item needing repair..." class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-brand-purple/50 text-sm"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full py-4 bg-brand-dark hover:bg-slate-800 text-white font-bold text-sm rounded-xl transition-all shadow-md cursor-pointer flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-paper-plane text-brand-teal"></i>
+                        <span>Send Message to anirudhvegas2013@gmail.com</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-brand-dark text-white py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+            <div class="flex items-center justify-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-brand-coral flex items-center justify-center text-white text-xl font-bold">
+                    <i class="fa-solid fa-gift"></i>
+                </div>
+                <span class="text-2xl font-black tracking-tight">GARAGE<span class="text-brand-coral">SALES</span></span>
+            </div>
+
+            <p class="text-gray-400 text-xs sm:text-sm max-w-md mx-auto">
+                Founded by Anirudh Harish & Dhriti Shriram (Age 13). Sales of goodies, custom artwork, pens, item repairs, and technical services delivered directly to you!
+            </p>
+
+            <div class="inline-flex items-center gap-2 px-4 py-2 bg-slate-800/80 rounded-xl text-xs text-brand-teal font-semibold">
+                <i class="fa-solid fa-envelope"></i>
+                <a href="mailto:anirudhvegas2013@gmail.com" class="hover:underline">anirudhvegas2013@gmail.com</a>
+                <span class="text-gray-500">|</span>
+                <span class="text-gray-400">No phone number available yet</span>
+            </div>
+
+            <div class="text-xs text-gray-500 pt-4 border-t border-slate-800">
+                &copy; <span id="year"></span> Garage Sales. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <div id="inquiryDrawer" class="fixed inset-0 z-50 overflow-hidden hidden">
+        <div class="absolute inset-0 bg-black/40 backdrop-blur-xs transition-opacity" onclick="toggleInquiryDrawer()"></div>
+        
+        <div class="fixed inset-y-0 right-0 max-w-full flex pl-10">
+            <div class="w-screen max-w-md bg-white shadow-2xl flex flex-col">
+                <div class="p-6 bg-brand-lightBg border-b border-gray-100 flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-clipboard-list text-brand-coral text-xl"></i>
+                        <h3 class="font-extrabold text-lg text-brand-dark">Goodies & Service Inquiry List</h3>
+                    </div>
+                    <button onclick="toggleInquiryDrawer()" class="text-gray-400 hover:text-gray-600 text-xl p-2 cursor-pointer">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+
+                <div id="inquiryItemsContainer" class="flex-1 overflow-y-auto p-6 space-y-4">
+                    <!-- Dynamic Items -->
+                </div>
+
+                <div class="p-6 border-t border-gray-100 bg-white space-y-3">
+                    <p class="text-xs text-gray-500">Submitting will open your email to send this inquiry list to <strong>anirudhvegas2013@gmail.com</strong>.</p>
+                    <button onclick="submitInquiryList()" class="w-full py-3.5 bg-brand-coral hover:bg-rose-600 text-white font-bold rounded-xl transition-all shadow-md text-sm cursor-pointer">
+                        Send List via Email
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 bg-brand-dark text-white px-5 py-3 rounded-2xl shadow-xl flex items-center gap-3 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+        <i class="fa-solid fa-circle-check text-brand-teal text-lg"></i>
+        <span id="toastMsg" class="text-sm font-semibold">Added to Inquiry List!</span>
+    </div>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const offerings = [
+            {
+                id: 1,
+                title: "Handcrafted Gift Goodies & Bundles",
+                category: "goodies",
+                lead: "Dhriti Shriram",
+                badge: "Handicraft Goodie",
+                emoji: "🎁",
+                gradient: "from-pink-100 to-rose-100",
+                desc: "Custom handmade novelty goodies, surprise gift pouches, and artistic papercraft created by Dhriti."
+            },
+            {
+                id: 2,
+                title: "Fixing & Repairing Old Items",
+                category: "repairs",
+                lead: "Anirudh Harish",
+                badge: "Repair Service",
+                emoji: "🛠️",
+                gradient: "from-slate-100 to-teal-100",
+                desc: "Have broken toys, loose components, or old items needing a fix? Anirudh provides repair services."
+            },
+            {
+                id: 3,
+                title: "Fine Stationery Pens & Writing Goodies",
+                category: "sales",
+                lead: "Anirudh Harish",
+                badge: "Sales of Goodies",
+                emoji: "✒️",
+                gradient: "from-blue-100 to-indigo-100",
+                desc: "High-quality smooth gel pens, multi-color fineliners, and specialty writing goodies."
+            },
+            {
+                id: 4,
+                title: "Technical Support & Device Setup",
+                category: "tech",
+                lead: "Anirudh Harish",
+                badge: "Tech Service",
+                emoji: "💻",
+                gradient: "from-cyan-100 to-blue-100",
+                desc: "Help with gadget troubleshooting, digital file organization, and tech setup by Anirudh."
+            },
+            {
+                id: 5,
+                title: "Custom Drawings & Fine Artwork",
+                category: "goodies",
+                lead: "Dhriti Shriram",
+                badge: "Art Design",
+                emoji: "🎨",
+                gradient: "from-purple-100 to-pink-100",
+                desc: "Personalized sketches, portraits, and custom decorative artwork drawn by Dhriti."
+            },
+            {
+                id: 6,
+                title: "Handmade Floral & Art Bookmarks",
+                category: "goodies",
+                lead: "Dhriti Shriram",
+                badge: "Craft Goodie",
+                emoji: "🌸",
+                gradient: "from-emerald-100 to-teal-100",
+                desc: "Beautiful custom-designed bookmarks and artistic reading accessories."
+            },
+            {
+                id: 7,
+                title: "Fineliner Marker & Gel Pen Sets",
+                category: "sales",
+                lead: "Anirudh Harish",
+                badge: "Stationery Goodie",
+                emoji: "🖊️",
+                gradient: "from-yellow-100 to-amber-100",
+                desc: "Smooth writing markers, pastel highlighters, and specialty pen packs."
+            },
+            {
+                id: 8,
+                title: "Gadget Cleaning & Minor Fixes",
+                category: "tech",
+                lead: "Anirudh Harish",
+                badge: "Tech Service",
+                emoji: "🔌",
+                gradient: "from-teal-100 to-sky-100",
+                desc: "Quick hardware cleaning, port maintenance, and minor fixes for everyday electronics."
+            }
+        ];
+
+        let inquiryList = [];
+
+        function renderOfferings(items) {
+            const grid = document.getElementById('offeringsGrid');
+            grid.innerHTML = '';
+
+            items.forEach(item => {
+                const card = document.createElement('div');
+                card.className = "bg-white rounded-3xl p-5 border border-gray-100 shadow-xs hover:shadow-md transition-all flex flex-col justify-between group";
+                card.innerHTML = `
+                    <div>
+                        <div class="h-40 bg-gradient-to-br ${item.gradient} rounded-2xl flex items-center justify-center text-5xl relative overflow-hidden group-hover:scale-[1.02] transition-transform">
+                            <span>${item.emoji}</span>
+                            <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-xs text-gray-800 text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider">
+                                ${item.badge}
+                            </span>
+                        </div>
+                        <div class="mt-4">
+                            <span class="text-xs text-brand-purple font-bold">Lead: ${item.lead}</span>
+                            <h3 class="font-bold text-gray-800 text-base leading-snug mt-1">${item.title}</h3>
+                            <p class="text-xs text-gray-500 mt-1.5 leading-relaxed">${item.desc}</p>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-3 border-t border-gray-50 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-gray-400">Delivery Only</span>
+                        <button onclick="addToInquiry(${item.id})" class="px-4 py-2.5 bg-brand-dark hover:bg-slate-800 text-white font-bold text-xs rounded-xl transition-all flex items-center gap-1.5 shadow-xs cursor-pointer">
+                            <i class="fa-solid fa-plus text-brand-teal"></i> Add to Inquiry
+                        </button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function filterOfferings(cat) {
+            document.querySelectorAll('.offer-filter').forEach(btn => {
+                if (btn.dataset.cat === cat) {
+                    btn.classList.add('bg-brand-dark', 'text-white');
+                    btn.classList.remove('bg-white', 'text-gray-600');
+                } else {
+                    btn.classList.remove('bg-brand-dark', 'text-white');
+                    btn.classList.add('bg-white', 'text-gray-600');
+                }
+            });
+
+            if (cat === 'all') {
+                renderOfferings(offerings);
+            } else {
+                renderOfferings(offerings.filter(o => o.category === cat));
+            }
+        }
+
+        function addToInquiry(id) {
+            const item = offerings.find(o => o.id === id);
+            if (!inquiryList.some(i => i.id === id)) {
+                inquiryList.push(item);
+                updateInquiryUI();
+                showToast(`Added "${item.title}" to Inquiry List!`);
+            } else {
+                showToast(`"${item.title}" is already in your list!`);
+            }
+        }
+
+        function removeFromInquiry(id) {
+            inquiryList = inquiryList.filter(i => i.id !== id);
+            updateInquiryUI();
+        }
+
+        function updateInquiryUI() {
+            const container = document.getElementById('inquiryItemsContainer');
+            const badge = document.getElementById('inquiryBadge');
+
+            if (inquiryList.length > 0) {
+                badge.textContent = inquiryList.length;
+                badge.classList.remove('hidden');
+            } else {
+                badge.classList.add('hidden');
+            }
+
+            if (inquiryList.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-12 space-y-3">
+                        <div class="text-5xl text-gray-300">📋</div>
+                        <p class="text-gray-500 text-xs font-semibold">Your inquiry list is empty.</p>
+                        <p class="text-gray-400 text-[11px]">Select goodies or services to request delivery details!</p>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = inquiryList.map(item => `
+                <div class="flex items-center justify-between p-3.5 bg-brand-lightBg rounded-2xl border border-gray-100">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-white rounded-xl flex items-center justify-center text-xl shadow-xs">
+                            ${item.emoji}
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-xs text-gray-800">${item.title}</h4>
+                            <p class="text-[10px] text-brand-purple font-semibold">Lead: ${item.lead}</p>
+                        </div>
+                    </div>
+                    <button onclick="removeFromInquiry(${item.id})" class="text-gray-400 hover:text-red-500 p-1 cursor-pointer">
+                        <i class="fa-solid fa-trash-can text-sm"></i>
+                    </button>
+                </div>
+            `).join('');
+        }
+
+        function submitInquiryList() {
+            if (inquiryList.length === 0) {
+                showToast("Please add items to your list first.");
+                return;
+            }
+
+            const itemsStr = inquiryList.map(i => `- ${i.title} (${i.lead})`).join('%0D%0A');
+            const mailtoUrl = `mailto:anirudhvegas2013@gmail.com?subject=Garage Sales Goodies %26 Service Inquiry&body=Hi Anirudh and Dhriti,%0D%0A%0D%0AI would like to inquire about the following goodies and services:%0D%0A${itemsStr}%0D%0A%0D%0AHandover Method: Delivery%0D%0A%0D%0APlease let me know the details!`;
+
+            window.location.href = mailtoUrl;
+            toggleInquiryDrawer();
+            showToast("Opening email to send inquiry...");
+        }
+
+        function toggleInquiryDrawer() {
+            document.getElementById('inquiryDrawer').classList.toggle('hidden');
+        }
+
+        function handleRequestSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('senderName').value;
+            const email = document.getElementById('senderEmail').value;
+            const type = document.getElementById('requestType').value;
+            const details = document.getElementById('requestDetails').value;
+
+            const mailtoUrl = `mailto:anirudhvegas2013@gmail.com?subject=Garage Sales Request from ${encodeURIComponent(name)}&body=Name: ${encodeURIComponent(name)}%0D%0AEmail: ${encodeURIComponent(email)}%0D%0ARequest Type: ${encodeURIComponent(type)}%0D%0AHandover Method: Delivery%0D%0A%0D%0ADetails %26 Delivery Address:%0D%0A${encodeURIComponent(details)}`;
+
+            window.location.href = mailtoUrl;
+            showToast("Opening email application...");
+            e.target.reset();
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMsg').textContent = msg;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+
+        window.onload = function() {
+            renderOfferings(offerings);
+        };
+    </script>
+</body>
+</html>
